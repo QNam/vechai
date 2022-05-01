@@ -1,0 +1,70 @@
+<?php
+
+return [
+    'banner.title' => 'Nền tảng chuyển đổi số ngành vận tải hành khách',
+    'banner.desc' => 'Cung cấp nền tảng công nghệ số hoá ngành vận tải hành khách đường dài. Giúp các nhà vận tải hành khách chuyển đổi số, chủ động quản trị khoa học, nâng cao năng lực cạnh tranh từ đó giữ vững thị phần và mở rộng quy mô.',
+    'banner.register' => 'Dùng thử', 
+
+    'benefit.header1' => "Hệ sinh thái",
+    'benefit.header2' => "quản trị toàn diện",
+    'benefit.header3' => "cho nhà xe",
+    'benefit.title1' => "Tiết kiệm 3% - 5% Chi phí vận hành",
+    'benefit.desc1' => 'Phần mềm quản lý nhà xe giúp khách hàng quản lý dễ dàng doanh nghiệp của mình, tối ưu nguồn nhân lực, giảm thiểu chi phí vận hành',
+    'benefit.title2' => 'Tăng trưởng 10% - 20% Doanh thu bán vé', 
+    'benefit.desc2' => 'Nhà xe chủ động tạo các ưu đãi + chiến lược quảng cáo cho doanh nghiệp giúp gia tăng doanh thu của mình',
+    'benefit.title3' => 'Giảm tải công việc & Quản lý khoa học', 
+    'benefit.desc3' => 'Sử dụng phần mềm vào quản lý giúp công việc trở nên đơn giản hơn bao giờ hết', 
+
+    'why.header' => 'Tại sao chọn An Vui',
+    'why.desc1' => 'Cuộc cách mạng công nghiệp lần thứ 4 (cách mạng công nghiệp 4.0) đang ảnh hưởng, tác động sâu sắc đến quốc gia, mỗi ngành, lĩnh vực, doanh nghiệp và người dân. Vì vậy, ngành GTVT cũng không nằm ngoài ảnh hưởng này.',
+    'why.desc2' => 'Giờ đây không còn doanh nghiệp to thắng doanh nghiệp nhỏ mà là doanh nghiệp nhanh thắng doanh nghiệp chậm. Nếu thiếu tiền thì có thể đi vay, thiếu xe thì có thể đi thuê nhưng thiếu hành khách là thiếu tất cả. Chính vì thế việc ứng dụng công nghệ vào quản lý điều hành giúp doanh nghiệp vận tải tăng doanh thu, tiết kiệm chi phí và nâng cao năng lực cạnh tranh trong thời đại mới. Chúng tôi giúp bạn thực hiện điều đó!',
+    'why.register' => 'ĐĂNG KÝ TƯ VẤN',
+
+    'ecosys.header' => 'Hệ sinh thái của An Vui có gì ?',
+    'ecosys.title1' => 'Ứng dụng cho đại lý bán vé',
+    'ecosys.desc1' => 'Giúp nhà xe chủ động mở rộng các kênh đại lý bán vé online. Có thể phân cấp các mức hoa hồng khác nhau.',
+    'ecosys.title2' => 'Website thương hiệu riêng cho nhà xe',
+    'ecosys.desc2' => 'AN VUI giúp nhà xe có một website bán vé chuyên nghiệp mang thương hiệu riêng.',
+    'ecosys.title3' => 'App đặt vé online mang thương hiệu riêng cho nhà xe',
+    'ecosys.desc3' => 'Ứng dụng mang thương hiệu của nhà xe cho hành khách đặt vé và thanh toán online.',
+    'ecosys.title4' => 'Ứng dụng đón trả khách cho lái phụ xe',
+    'ecosys.desc4' => 'Lái phụ xe nhìn thấy vị trí khách đứng chờ, đón trả khách đúng điểm.',
+    'ecosys.title5' => 'Phần mềm đặt vé tại phòng vé',
+    'ecosys.desc5' => 'Bán vé và xuất vé cho hành khách, kết nối với tổng đài điện thoại để hiển thị tên, tuổi, địa chỉ và lịch sử đặt vé để chăm sóc khách hàng tốt hơn.',
+    'ecosys.title6' => 'Báo cáo trực tuyến hỗ trợ điều hành',
+    'ecosys.desc6' => 'Tiết kiệm thời gian và chi phí. Tự động tính toán và đưa ra các báo cáo về doanh thu, chi phí và hiệu quả kinh doanh.',
+
+    'customers.header1' => 'Khách hàng tiêu biểu của An Vui',
+
+    'customers.header' => 'Khách hàng nói gì về An Vui',
+    'customers.halan.name' => 'Ông Nguyễn Mạnh Hà',
+    'customers.halan.pos' => 'Chủ tịch của Công ty Vận tải và du lịch Hà Lan',
+    'customers.halan.content' => 'Khi ứng dụng AN VUI  vào hoạt động quản lý và vận hành Hoạt động của Hà Lan trở nên minh bạch và thuận tiện. Đặc biệt việc ứng dụng hợp đồng điện tử do AN VUI cung cấp cho mảng xe hợp đồng của Hà lan đã mang lại sự thuận tiện giảm chi phí in ấn, lưu trữ và vận hành đáng kể cho Hà Lan.',
+    'customers.hahai.name' => 'Ông Nguyễn Thượng Hải',
+    'customers.hahai.pos' => 'Giám đốc Công ty Vận tải Hà Hải Thái Bình',
+    'customers.hahai.content' => 'Chúng tôi đã sử dụng nhiều phần mềm của những đơn vị khác nhau nhưng cuối cùng lựa chọn AN VUI bởi AN VUI giúp chúng tôi tích hợp từ Tổng đài tự động, website đặt vé và hoạt động bán vé tại phòng vé tất cả trong 1 hệ thống duy nhất tiện dùng và không bị phức tạp liên hệ với nhiều bên.',
+    'customers.inter.name' => 'Ông Nguyễn Thanh Tùng',
+    'customers.inter.pos' => 'Chủ tịch INTER BUS LINES',
+    'customers.inter.content' => 'Từ khi ứng dụng AN VUI vào quản lý và điều hành Interbuslines Doanh thu của Interbuslines tăng hơn 200% sau 2 năm ứng dụng. Đồng thời Inter buslines giờ có thể chủ động mở các đại lý phân phối vé tới hành khách giảm đi ⅓ số lượng lao động.',
+    
+    'customers.vulinh.name' => 'Ông Tô Ngọc Vũ',
+    'customers.vulinh.pos' => 'Tổng Giám Đốc Xe khách Vũ Linh',
+    'customers.vulinh.content' => 'Vũ Linh là đơn vị luôn tiên phong ứng dụng công nghệ để mang lại trải nghiệm tốt nhất cho hành khách. Chúng tôi đã tìm hiểu và lựa chọn AN VUI là đơn vị cung cấp giải pháp Công nghệ tổng thể cho Vũ Linh. Chúng tôi đánh giá cao đội ngũ và sự cầu thị của AN VUI trong việc phục vụ khách hàng',
+
+    'customers.kumho.name' => 'Ông Nguyễn Mạnh Tuấn',
+    'customers.kumho.pos' => 'Giám đốc kinh doanh Xe Kumho Samco',
+    'customers.kumho.content' => 'Phần mềm AN VUI hoạt động ổn định, đầy đủ các tính năng giúp doanh nghiệp tăng tăng hành khách, doanh thu thông qua việc có nhiều kênh bán vé và thanh toán ( qua app, web, thanh toán online,) . Việc quản lý doanh thu dễ dàng, chặt chẽ hơn thông qua các báo cáo thống kê chi tiết đến từng xe, từng nhân viên và luôn được update theo nhu cầu thực tế. Đội ngũ nhân viên hỗ trợ doanh nghiệp nhiệt tình 24/7. Luôn xử lý kịp thời khi có sự cố phát sinh',
+
+    'qnas.title' => 'Câu hỏi thường gặp',
+    'qna1.question' => 'AN VUI hỗ trợ bảo vệ Thương hiệu của Hãng xe như thế nào?',
+    'qna1.answer' => 'Đây là tiêu chí đầu tiên của AN VUI mong muốn mang đến cho Khách hàng. Chúng tôi cung cấp từ Website,App đều mang <b>thương hiệu riêng</b> của Hãng xe. Các tin nhắn, Email và tổng đài gọi điện cho hành khách đều mang thương hiệu riêng của Hãng xe. Giúp cho Hãng xe của bạn luôn chiếm vị trí cao trên công cụ tìm kiếm và không bị các đối thủ lợi dụng thương hiệu của bạn. AN VUI tuyệt đối không sử dụng thương hiệu của Nhà Xe để tìm cách bán vé thu hoa hồng đồng thời AN VUI còn  tư vấn giúp Nhà xe phương án xây dựng và phát triển thương hiệu riêng của mình.',
+    'qna2.question' => 'AN VUI giúp nhà xe tăng doanh số bán vé bằng cách nào?',
+    'qna2.answer' => 'AN VUI không bán vé nhằm đảm bảo tính khách quan và giữ an toàn cho Hãng xe đã tin dùng AN VUI. Hành khách có thể mua vé online trực tiếp từ website của Hãng đồng thời kết nối Hãng xe với hơn : 1,500 Đại lý bán vé online lớn như Bank App, và các siêu App hiện nay trên thị trường… Sẽ giúp hãng xe tăng doanh thu cả online lẫn offline.',
+    'qna3.question' => 'Thông tin của Nhà xe được AN VUI bảo mật như thế nào?',
+    'qna3.answer' => 'Ngoài việc cam kết bảo mật thông tin của hãng xe mà AN VUI đã ký kết, AN VUI còn bàn giao tài khoản quản trị độc lập giúp Nhà xe chủ động mọi thao tác trên phần mềm như : Thêm xe, thêm tuyến, Thêm người dùng và chủ động phân quyền đến từng đối tượng.  Dữ liệu được AN VUI backup thường xuyên để đảm bảo hệ thống vận hành ổn định và an toàn.',
+    'qna4.question' => 'Làm thế nào để có thể sử dụng được sản phẩm dịch vụ của AN VUI?',
+    'qna4.answer' => "AN VUI có mặt tại Singapore và tại Việt Nam chúng tôi có mặt tại cả 2 miền Nam, Bắc, đội ngũ tư vấn và triển khai sẽ đến trực tiếp gặp khách hàng để trao đổi và tư vấn những gói phù hợp. Ngoài ra AN VUI có tổng đài tiếp nhận yêu cầu của khách hàng : 024.9999.6666 luôn sẵn sàng để tư vấn cho bạn. Khách hàng khi có nhu cầu sử dụng sản phẩm và dịch vụ của AN VUI có thể đăng ký tư vấn online <a href='https://anvui.vn/#register' data-toggle='modal' data-target='#modal--register'><b>tại đây</b><a>",
+    'qna5.question' => 'Tôi cần biết thêm thông tin về AN VUI thì có những kênh nào để tham khảo?',
+    'qna5.answer' => 'Là đơn vị Startup Công Nghệ đầu tiên tại Việt Nam cung cấp giải pháp quản trị tổng thể cho doanh nghiệp Vận tải và đã nhận được hàng loạt giải thưởng như: Startup Việt, Nhân Tài Đất Việt, Sao Khuê… AN VUI cũng là Startup đã nhận được vốn đầu tư của các quỹ danh tiếng như : Vinacapital ventures, ... Nhưng trước khi lựa chọn AN VUI là đơn vị cung cấp giải pháp Chúng tôi khuyến khích khách hàng tìm hiểu kỹ thông tin về chúng tôi qua hệ thống Báo Chí, Truyền hình hoặc chính những khách hàng đang sử dụng sản phẩm và dịch vụ của AN VUI…  Kênh Youtube của AN VUI: <a href="https://www.youtube.com/channel/UCwH8pqcfHz3tll8JD0UYpwQ">tại đây</a>',
+];
+

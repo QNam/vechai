@@ -1,0 +1,11 @@
+<?php
+
+return [
+    'greeting' => 'Xin chào, chúng tôi là An Vui ',
+    'para1' => 'AN VUI là Startup công nghệ tiên phong phục vụ cho lĩnh vực vận tải. Với sứ mệnh số hoá ngành vận tải hành khách, giúp giữ vững thị phần, nâng cao năng lực cạnh tranh, giúp các nhà vận tải truyền thống chuyển dịch sang vận tải công nghệ, mang đến những hành trình đi an về vui cho Cộng đồng. Hiện tại AN VUI đang có mặt tại Thị trường Việt Nam và hướng đến thị trường Đông Nam Á và Châu Á.',
+    'para2' => 'Được thành lập từ năm 2015 và chính thức công bố sản phẩm nền tảng công nghệ tháng 7 năm 2017. Đến nay AN VUI đã phục vụ hàng trăm doanh nghiệp vận tải quy mô lớn trong cả nước Ứng dụng phần mềm của AN VUI vào quản lý và công cuộc chuyển đổi số cho doanh nghiệp. AN VUI đã trở thành cầu nối cho các doanh nghiệp vận tải đưa nguồn công suất dư thừa của mình lên các sàn giao dịch vận tải nhằm tăng doanh thu và giảm chi phí vận hành. Mọi hoạt động của doanh nghiệp vận tải đều được tự động và xử lý khoa học trên nền tảng công nghệ mà AN VUI cung cấp.',
+    'para3' => 'AN VUI lọt TOP 17 Startup tiêu biểu của Việt Nam do báo VnExpress tổ chức năm 2016. Sau đó, AN VUI tiếp tục là doanh nghiệp công nghệ vinh dự đã vượt qua 289 dự án lọt vào TOP 10 của Nhân Tài Đất Việt 2017. Là startup duy nhất của Việt Nam vượt qua cuộc thi Seedstars Competition tiến thẳng vào vòng Chung kết Châu Á, AN VUI đã xuất sắc được chọn trở thành 1 trong các đại diện Châu Á tham dự Seedstars World Competition, được tổ chức tại Lausanne, Switzerland.',
+    'para4' => 'Năm 2019 AN VUI lần đầu tiên nhận vốn đầu tư từ quỹ VinaCapital Ventures. AN VUI đã có những bước tiến mạnh mẽ trở thành đơn vị số 1 tại Việt Nam cung cấp nền tảng công nghệ tổng thể cho doanh nghiệp vận tải. Hiện nay AN VUI tiếp tục đang gọi những vòng vốn tiếp theo để mở rộng quy mô và hoàn chỉnh hệ sinh thái tổng thể cho ngành vận tải để mở rộng thị trường sang các nước Đông Nam Á.',
+    'investLabel' => 'Quỹ đầu tư vào AN VUI',
+    'reviewLabel' => 'Khách hàng nói gì về An Vui'
+];
