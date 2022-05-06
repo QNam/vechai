@@ -62,12 +62,20 @@
                         <ul class="dropdown-menu">
                             <li><a class="sidebar-link" href="{{ route('admin.news.create',['id' => '']) }}">thêm tin tức</a></li>
                             <li><a class="sidebar-link" href="{{ route('admin.news.index') }}">danh sách tin tức</a></li>
+                            <li><a class="sidebar-link" href="{{ route('admin.category.index') }}">danh mục tin tức</a></li>
+                            <li><a class="sidebar-link" href="{{ route('admin.category.create') }}">thêm mới danh mục tin tức</a></li>
                         </ul>
                     </li>
                     <li class="nav-item active">
                         <a class="sidebar-link" href="{{ route("admin.menu.index") }}" default>
                             <span class="icon-holder">
                                 <i class="c-orange-500 ti-menu"></i> </span><span class="title">menu</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="sidebar-link" href="{{ route("admin.banner.index") }}" default>
+                            <span class="icon-holder">
+                                <i class="c-orange-500 ti-menu"></i> </span><span class="title">banner</span>
                         </a>
                     </li>
                 </ul>

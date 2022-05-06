@@ -69,8 +69,19 @@ Route::middleware(['web', 'isAdminLogin'])->group(function () {
         Route::post('/admin/news/remove', 'Admin\NewsController@remove')->name('admin.news.remove');
         Route::post('/admin/news/update_status', 'Admin\NewsController@ajaxUpdateStatus')->name('admin.news.ajax.update_status');
 
+        Route::get('/admin/category', 'Admin\CategoryController@index')->name('admin.category.index');
+        Route::post('/admin/category/update_status', 'Admin\CategoryController@ajaxUpdateStatus')->name('admin.category.ajax.update_status');
+        Route::get('/admin/category/create', 'Admin\CategoryController@create')->name('admin.category.create');
+        Route::get('/admin/category/{id}', 'Admin\CategoryController@create')->name('admin.category.edit');
+        Route::post('/admin/category', 'Admin\CategoryController@store')->name('admin.category.store');
+        Route::post('/admin/category/remove', 'Admin\CategoryController@remove')->name('admin.category.remove');
+
         Route::post('/admin/web-setting', 'Admin\WebController@store')->name('admin.web.store');
         
+        Route::get('/admin/banner', 'Admin\BannerController@index')->name('admin.banner.index');
+        Route::post('/admin/banner', 'Admin\BannerController@ajaxStore')->name('admin.banner.ajax_store');
+        Route::post('/admin/banner/remove', 'Admin\BannerController@ajaxRemove')->name('admin.banner.ajax_remove');
+
         Route::get('/admin/recruit', 'HomeController@index')->name('admin.recruit.index');
         Route::get('/admin/recruit/create', 'HomeController@index')->name('admin.recruit.create');
         Route::get('/admin/recruit/{id}', 'HomeController@index')->name('admin.recruit.edit');

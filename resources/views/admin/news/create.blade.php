@@ -50,7 +50,7 @@
                                     <div class="row">
                                         <b class="col-4">Ngày đăng:</b>
                                         <div class="col-8">
-                                            {{ $data['created_at_format'] }}
+                                            {{ $data['created_at_format'] ?? '' }}
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +59,43 @@
                                     <div class="row">
                                         <b class="col-4">Hiện/Ẩn:</b>
                                         <div class="col-8">
-                                            @include('admin.templates.switch', ['status' => $data['status'] ?? 1])
+                                            <input type="checkbox" name="status" value="1" {{ $data['status'] == 1 ? 'checked' : 0 }}>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <b class="col-4">Nổi bật:</b>
+                                        <div class="col-8">
+                                            <input type="checkbox" name="is_hot" value="1" {{ $data['is_hot'] == 1 ? 'checked' : 0 }}>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <b class="col-4">Danh mục:</b>
+                                        <div class="col-8">
+                                            @foreach ($categories as $cate)
+                                            <div class="d-flex align-items-center mb-2">
+                                                @if (!isset($data['id']))
+                                                    <input type="checkbox" 
+                                                        name="categories[]" 
+                                                        {{ $cate->not_allow_delete == 1 ? 'checked' : '' }} 
+                                                        class="mr-1" 
+                                                        value="{{ $cate->id }}"> 
+                                                    {{ $cate->name }}
+                                                @else
+                                                    <input type="checkbox" 
+                                                        name="categories[]"
+                                                        {{ in_array($cate->id, $categoryIds) ? 'checked' : '' }} 
+                                                        class="mr-1" 
+                                                        value="{{ $cate->id }}"> 
+                                                    {{ $cate->name }}
+                                                @endif
+                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>

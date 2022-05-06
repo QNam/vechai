@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Model\News as NewsModel;
 use Illuminate\Http\Request;
 use App\Services\UploadService;
+use App\Model\Category;
+use App\Model\NewsCategory;
 
 class NewsController extends Controller
 {
@@ -18,7 +20,7 @@ class NewsController extends Controller
 
     public function index() {
         $newsModel = new NewsModel();
-        
+
         $data = $newsModel->getNewses()->orderBy('updated_at', 'DESC')->paginate($this->filter['pagination']);
 
         return view('admin.news.index', ['data' => $data]);
@@ -26,14 +28,19 @@ class NewsController extends Controller
 
 
     public function create(Request $request) {
-        $data = [];
+        $data = null;
+        $categoryIds = [];
         $newsModel = new NewsModel();
+        $categories = Category::get();
 
         if($request->id) {
-            $data = $newsModel->getNewses(['id' => $request->id])->firstOrFail();
+            $data = $newsModel->getNewses(['id' => $request->id])->with('categories')->firstOrFail();
+            foreach ($data->categories as $key => $value) {
+                array_push($categoryIds, $value->id);
+            }
         }
 
-        return view('admin.news.create', ['data' => $data]); 
+        return view('admin.news.create', ['data' => $data, 'categories' => $categories, 'categoryIds' => $categoryIds]); 
     }
 
     public function ajaxUpdateStatus(Request $request) {
@@ -66,6 +73,7 @@ class NewsController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'status' => $request->status == 1 ? 1 : 0,
+            'is_hot' => $request->is_hot == 1 ? 1 : 0,
             'seo' => json_encode([
                 'meta_title' => $request->meta_title, 
                 'meta_desc' => $request->meta_desc, 
@@ -86,12 +94,14 @@ class NewsController extends Controller
 
         if(!$request->id) {
             $params['created_at'] = time();
-            if(NewsModel::insert($params)) {
+            if($newsId = NewsModel::insert($params)) {
+                NewsCategory::createMulti($request->categories, $newsId);
                 $request->session()->flash('GLOBAL_STATUS', 'SUCCESS');
                 $request->session()->flash('GLOBAL_MSG', 'Đăng bài viết thành công !');
                 return redirect()->back();
             } 
         } else {
+            NewsCategory::createMulti($request->categories, $request->id);
             $params['updated_at'] = time();
             if(NewsModel::where('id', $request->id)->update($params)) {
                 $request->session()->flash('GLOBAL_STATUS', 'SUCCESS');

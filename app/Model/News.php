@@ -16,6 +16,10 @@ class News extends BaseModel
         parent::__construct();
     }
 
+    public function categories() {
+		return $this->belongsToMany(Category::class, 'news_category');
+	}
+
     public function getImgLinkAttribute() {
         return asset($this->img);
     }

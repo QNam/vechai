@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\News;
+use App\Model\Category;
+use App\Model\Banner;
 
 class HomeController extends Controller
 {
@@ -12,6 +14,10 @@ class HomeController extends Controller
         $data['news_hot']['first'] = News::where('status', 1)->orderBy('updated_at', 'DESC')->first();
         $data['news_hot']['group1'] = News::where('status', 1)->orderBy('updated_at', 'DESC')->offset(2)->limit(5)->get();
         $data['news_hot']['group2'] = News::where('status', 1)->orderBy('updated_at', 'DESC')->offset(7)->limit(16)->get();
+
+        $data['categories_home'] = Category::where('is_home', 1)->with('newses')->limit(6)->get();
+
+        $data['banners'] = Banner::get();
 
         return view('home.index', ['data' => $data]);
     }

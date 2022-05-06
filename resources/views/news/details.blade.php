@@ -104,82 +104,10 @@
     <!-- end quang cao -->
     <!-- dai ly -->
     <!-- blog -->
-    <div class="blog">
-       <h3>Blog</h3>
-       <div class="panel-body">
-          <ul class="blog">
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-tai-huyen-cu-chi.html"> Thu mua phế liệu Huyện Củ Chi</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-tai-huyen-can-gio.html"> {{ $data->title }}</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-tai-quan-phu-nhuan-2.html"> Thu mua phế liệu Quận Phú Nhuận</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-tai-thu-duc.html"> Thu mua phế liệu Quận Thủ Đức</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-quan-binh-chanh.html"> Thu mua phế liệu Quận Bình Chánh</a>
-             </li>
-          </ul>
-       </div>
-    </div>
+    @include('news.blocks.block_news_new')
     <!-- end blog -->
     <!-- blog featured -->
-    <div class="blog">
-       <h3>Nổi bật</h3>
-       <div class="panel-body">
-          <ul class="blog">
-             <li>
-                <a href="https://phelieuthienphat.com/nhan-thu-mua-phe-lieu-gia-cao-tai-tphcm.html"> Nhận thu mua phế liệu giá cao tại TPHCM</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-tai-bien-hoa-dong-nai.html"> Thu mua phế liệu tại Biên Hòa &#8211; Đồng Nai</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-tai-tinh-binh-duong.html"> Thu mua phế liệu tại tỉnh Bình Dương</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/cua-hang-thu-mua-phe-lieu-o-quan-11.html"> Cửa hàng thu mua phế liệu ở Quận 11</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/cong-ty-thu-mua-phe-lieu-tai-quan-9-tp-ho-chi-minh.html"> Công ty thu mua phế liệu tại Quận 9 Tp Hồ Chí Minh</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-quan-7-hcm.html"> Thu mua phế liệu quận 7 HCM</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-tai-thanh-pho-ho-chi-minh-tphcm.html"> Thu mua phế liệu tại Thành phố Hồ Chí Minh (TPHCM)</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thanh-ly-nha-xuong.html"> Thanh lý nhà xưởng</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-may-moc-cu.html"> Thu mua máy móc cũ</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-thep.html"> Thu mua phế liệu thép</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-inox.html"> Thu mua phế liệu inox</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-nhua.html"> Thu mua phế liệu nhựa</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-giay.html"> Thu mua phế liệu giấy</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-nhom.html"> Thu mua phế liệu nhôm</a>
-             </li>
-             <li>
-                <a href="https://phelieuthienphat.com/thu-mua-phe-lieu-dong.html"> Thu mua phế liệu đồng</a>
-             </li>
-          </ul>
-       </div>
-    </div>
+    @include('news.blocks.block_news_hot')
     <!-- end blog featured-->
  </div>
  <!-- /sidebar -->

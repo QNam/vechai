@@ -1,6 +1,21 @@
 @extends('template.layout')
 @section('content')
 <div class="col-md-12">
+   <!-- slide -->
+   <div id="metaslider-id-129" style="max-width: 1140px;" class="ml-slider-3-20-3 metaslider metaslider-flex metaslider-129 ml-slider nav-hidden">
+      <div id="metaslider_container_129">
+         <div id="metaslider_129">
+            <ul aria-live="polite" class="slides">
+               @foreach ($data['banners'] as $banner)
+               <li style="display: block; width: 100%;" class="slide-168 ms-image"><img src="{{ $banner->link }}" style="max-height: 400px; overflow: hidden" alt="" class="slider-129 slide-168" /></li>
+               @endforeach
+            </ul>
+         </div>
+      </div>
+   </div>
+   <!-- end slide -->				
+</div>
+<div class="col-md-12">
    <div class="row col-md-12 hidden-xs why">
       <div class="col-md-3">
          <div class="icon">
@@ -41,6 +56,26 @@
    </div>
 
    <div class="col-md-12 left">
+      <div class="feature-product">
+         @foreach ($data['categories_home'] as $category)
+         <h2><span class="glyphicon glyphicon-th" aria-hidden="true"></span> {{ $category->name }}</h2>
+         <div class="row product-home">
+            @foreach ($category->newses as $news)
+            <div class="col-md-4 col-xs-6">
+               <a href="{{ $news->link }}" title="{{ $news->title }}">
+                  <img src="{{ $news->img_link }}" class="attachment-img-responsive thumb size-img-responsive thumb wp-post-image" alt="{{ $news->title }}" />								
+                  <div class="info">
+                     <span class="name">{{ $news->title }}</span>
+                  </div>
+               </a>
+            </div>
+            @endforeach
+         </div>
+         @endforeach
+      </div>
+      <div class="col-md-12 promotion">
+         {{ $_WEB['short_intro'] }}
+      </div>
       <div class="new-product">
          <h2> <span class="glyphicon glyphicon-gift" aria-hidden="true"></span> Tin tức - hoạt động thu mua phế liệu</h2>
          <div class="row">

@@ -27,5 +27,20 @@ class ViewComposerServiceProvider extends ServiceProvider
             'template.navbar',
             'App\Http\ViewComposers\NavbarComposer'
         );
+
+        view()->composer(
+            'template.footer',
+            'App\Http\ViewComposers\FooterComposer'
+        );
+
+        view()->composer(
+            'news.blocks.block_news_new',
+            'App\Http\ViewComposers\NewNewsComposer'
+        );
+
+        view()->composer(
+            'news.blocks.block_news_hot',
+            'App\Http\ViewComposers\HotNewsComposer'
+        );
     }
 }
