@@ -19,6 +19,8 @@ body,p,ul,li,label, h1, h2, h3, h4, h5, h6{
 .aveditor {
     min-height: 500px; 
     border: none!important;
+    max-height: 500px;
+    overflow: auto;
 }
 
 .aveditor__toolbar .ck.ck-toolbar {

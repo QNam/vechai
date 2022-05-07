@@ -19,7 +19,7 @@ class MediaController extends Controller
 
         $res = [
             'status' => true,
-            'link' => env('APP_URL') . $link,
+            'link' => asset($link),
             'url' => env('APP_URL_NOT_HTP') . $link,
         ];
 
