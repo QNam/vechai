@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\News as NewsModel;
+use App\Model\Category;
 use App\Services\UploadService;
 
 class NewsController extends Controller
@@ -19,22 +20,14 @@ class NewsController extends Controller
     public function index(Request $request) {
         $data = [];
 
-        $newsModel = new NewsModel();
-
-        $header = [
-            'meta_title' => 'Chiêu mộ nhân sự cho Startup Công Nghệ với Sứ mệnh Số hoá ngành vận tải hành khách | AN VUI',
-        ];
-
-        
         // $this->setFilter($request->only(['title', 'pagination', 'id_view']));
-
-        $data = $newsModel->getNewses(['status' => 1])->orderBy('created_at', 'DESC')->paginate($this->filter['pagination']);
-        
-        foreach($data as $key => &$value) {
-            $value = $newsModel->createContentFormatter($value, 'news.detail' ,'d/m/Y');
+        if($request->q) {
+            $data = NewsModel::where('status', 1)->where('title', 'like', '%' . $request->q . '%')->orderBy('updated_at', 'DESC')->paginate($this->filter['pagination']);
+        } else {
+            $data = NewsModel::where('status', 1)->orderBy('updated_at', 'DESC')->paginate($this->filter['pagination']);
         }
 
-        $this->setHeader($header);
+        // $this->setHeader($header);
 
         return view("news.index")->with(['data' => $data]);
     }
@@ -64,6 +57,22 @@ class NewsController extends Controller
             'data' => $data,
         ]);
     } 
+
+    public function category(Request $request) {
+        $data = [];
+        $category = Category::findOrFail($request->id);
+
+        $data = NewsModel::where('news_category.category_id', $request->id)
+		->where('news.status', 1)
+		->join('news_category', 'news_category.news_id', '=', 'news.id')
+		->join('category', 'category.id', '=', 'news_category.category_id')
+		->select('news.*')
+		->orderBy('news.updated_at', 'DESC')
+        ->paginate($this->filter['pagination']);
+
+
+        return view("news.index")->with(['data' => $data, 'category' => $category]);
+    }
 
     public function get(Request $request) {
         $data = [];

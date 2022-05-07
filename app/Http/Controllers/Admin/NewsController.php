@@ -18,7 +18,7 @@ class NewsController extends Controller
         $this->filter['pagination'] = 10;
     }
 
-    public function index() {
+    public function index(Request $request) {
         $newsModel = new NewsModel();
 
         $data = $newsModel->getNewses()->orderBy('updated_at', 'DESC')->paginate($this->filter['pagination']);

@@ -17,6 +17,10 @@ Route::middleware(['web'])->group(function () {
         Route::get('/lang/{lang}', "HomeController@lang")->name('lang');
         Route::get('/gioi-thieu', 'IntroController@index')->name('intro.index');
         Route::get('/tin-tuc', 'NewsController@index')->name('news.index');
+        Route::get('/tin-tuc/{slug}-{id}', 'NewsController@category')
+                ->where('slug', '[a-zA-Z0-9-_]+')
+                ->where('id', '[0-9]+')
+                ->name('news.category');
         Route::get('/tin-tuc/{slug}-{id}.html', 'NewsController@detail')
                 ->where('slug', '[a-zA-Z0-9-_]+')
                 ->where('id', '[0-9]+')

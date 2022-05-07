@@ -31,6 +31,7 @@
                     @endif
                 </td>
                 <td>
+                    <a href="{{ $value->link }}" target="_blank" class="action action--warning"><i class="fa fa-eye"></i></a>
                     <a href="{{ route('admin.category.edit', ['id' => $value['id']]) }}" class="action action--primary"><i class="fa fa-edit"></i></a>
                     @if(!$value->not_allow_delete)
                     <form data-form-remove="{{$value['id']}}" action="{{ route('admin.category.remove') }}" class="d-inline" method="POST">

@@ -1,82 +1,53 @@
 @extends('template.layout')
 
 @section('content')
-<section class="news-page">
-    <div class="container">
-        <h3 class="page__header">Tin tức An Vui</h3>
-        <style>
-        .newNews__carousel {
-            margin-bottom: 40px;
-        }
-        </style>
-        <div id="js_newNews" class="newNews__carousel owl-carousel owl-theme">
-            @php $i = 0 @endphp
-            @foreach($data as $key => $value)
-            <div class="item newNews__item">
-                <div class="news-item__thumb" style="margin-bottom: 13px">
-                    <a href="{{ $value->link }}" title="{{ $value['title'] }}"><img src="{{ $value['img'] }}" class="img-fluid" title="{{ $value['title'] }}" alt="{{ $value['title'] }}"></a>
-                </div>
-                <h2 class="news-item__title"><a href="{{ $value->link }}" title="{{ $value['title'] }}">{{ str_limit($value['title'],150,'...') }}</a></h2>
-                <div class="news-item__desc">
-                    {{ !empty($value['desc']) ? str_limit($value['desc'],150,'...') : str_limit($value['seo']['meta_desc'],150,'...') }}
-                </div>
-                <p class="news-item__date">Ngày đăng: {{ $value['created_at_format'] }}</p>
-            </div>
-            @php 
-                $i++; 
-                if($i == 4) {
-                    break;
-                } 
-            @endphp
-            @endforeach
+<div class="col-md-9 left">
+    <ol class="breadcrumb">
+       <li><a href="{{ route('home.index') }}">Trang chủ</a></li>
+       {{-- <li><a href="https://phelieuthienphat.com/category/blog" rel="tag">Blog</a></li> --}}
+       @if(request()->q)
+       <li class="active">Tìm kiếm "{{ request()->q }}"</li>
+       @elseif(isset($category) )
+       <li class="active">{{ $category->name }}</li>
+        @else
+        <li class="active">Tin tức</li>
+        @endif
+    </ol>
+        @if(request()->q)
+        <h1>{{ $data->total() }} Kết quả tìm kiếm với từ khóa {{ request()->q }}</h1>
+        @elseif(isset($category) )
+        <h1>{{ $category->name }}</h1>
+        @else
+        <h1>Tin tức</h1>
+        @endif
+    @foreach ($data as $news)
+    <div class="product-thumb col-md-4">
+        <a href="{{ $news->link }}" title="{{ $news->title }}">
+        <div style="min-height: 160px; max-height: 160px; overflow: hidden">
+            <img src="{{ $news->img_link }}" class="attachment-img-responsive size-img-responsive wp-post-image"  alt="{{ $news->title }}" /></a>
         </div>
-
-        <div class="newsBanner">
-            <div id="js_newBanner" class="newBanner__carousel owl-carousel owl-theme">
-                <div class="item newsBanner__item">
-                    <img src="https://anvui.vn/imgs/banner/banner1.jpg" alt="">
-                </div>
-                <div class="item newsBanner__item">
-                    <img src="https://anvui.vn/imgs/banner/banner2.jpg" alt="">
-                </div>
-                <div class="item newsBanner__item">
-                    <img src="https://anvui.vn/imgs/banner/banner3.jpg" alt="">
-                </div>
-            </div>
-        </div>
-
-        <style>
-            .newsBanner {
-                margin-bottom: 40px;
-            }
-            /* .newsBanner__item img {
-                height: 250px;
-                max-width: 100%;
-            } */
-        </style>
-
-        @foreach($data as $key => $value)
-        <div class="news-item">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    <div class="news-item__thumb">
-                        <a href="{{ $value->link }}" title="{{ $value['title'] }}"><img src="{{ $value['img'] }}" class="img-fluid" title="{{ $value['title'] }}" alt="{{ $value['title'] }}"></a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                    <h2 class="news-item__title"><a href="{{ $value->link }}" title="{{ $value['title'] }}">{{ $value['title'] }}</a></h2>
-                    <div class="news-item__desc">
-                        {{ !empty($value['desc']) ? $value['desc'] : $value['seo']['meta_desc'] }}
-                    </div>
-                    <p class="news-item__date">Ngày đăng: {{ $value['created_at_format'] }}</p>
-                </div>    
-            </div>
-        </div>
-        @endforeach
-
-        <nav>
-            {{ $data->links() }}
-        </nav>
+        <h4><a href="{{ $news->link }}">{{ $news->title }}</a></h4>
     </div>
-</section>
+    @endforeach
+    <div class="text-center my-5">
+        {{ $data->links() }}
+    </div>
+ </div>
+ <!-- sidebar -->
+ <div class="col-md-3 right">
+    <!-- quang cao -->
+    {{-- <div class="promotion-2">
+       <img src="https://phelieuthienphat.com/wp-content/themes/html5blank-stable/images/promotion/quang-cao-thu-mua-phe-lieu.jpg" alt="Đặc sản Huế" class="img-responsive">
+    </div> --}}
+    <!-- end quang cao -->
+    <!-- dai ly -->
+    <!-- blog -->
+    @include('news.blocks.block_news_new')
+    <!-- end blog -->
+    <!-- blog featured -->
+    @include('news.blocks.block_news_hot')
+    <!-- end blog featured-->
+ </div>
+ <!-- /sidebar -->
+</div>
 @endsection

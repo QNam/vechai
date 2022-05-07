@@ -7,7 +7,7 @@
          <div id="metaslider_129">
             <ul aria-live="polite" class="slides">
                @foreach ($data['banners'] as $banner)
-               <li style="display: block; width: 100%;" class="slide-168 ms-image"><img src="{{ $banner->link }}" style="max-height: 400px; overflow: hidden" alt="" class="slider-129 slide-168" /></li>
+               <li style="display: block; width: 100%; max-height: 400px; overflow: hidden" class="slide-168 ms-image"><img src="{{ $banner->link }}" alt="" class="slider-129 slide-168" /></li>
                @endforeach
             </ul>
          </div>

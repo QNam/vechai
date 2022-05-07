@@ -17,6 +17,10 @@ class Category extends BaseModel
         parent::__construct();
     }
 
+    public function getLinkAttribute() {
+        return route('news.category', [ 'slug' => str_slug($this->name), 'id' => $this->id ]);
+    }
+
     public function newses() {
 		return $this->belongsToMany(News::class, 'news_category');
 	}

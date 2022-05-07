@@ -28,10 +28,10 @@
                  @endif 
                  @endforeach
              </ul>
-             <form method="GET" action="/"  class="form-search navbar-form navbar-right" role="search">
+             <form method="GET" action="{{ route('news.index') }}"  class="form-search navbar-form navbar-right" role="search">
                 <div class="form-group">
-                   <input type="text" class="form-control" placeholder="Nhập từ khóa" name="s">
-                   <input type="hidden" name="post_type" value="product">
+                   <input type="text" class="form-control" placeholder="Nhập từ khóa" name="q">
+                   {{-- <input type="hidden" name="post_type" value="product"> --}}
                 </div>
                 <button type="submit" class="button btn btn-default">Tìm kiếm</button>
              </form>
