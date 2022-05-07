@@ -35,7 +35,7 @@
                                 SEO
                             </div>
                             <div class="avcollapse__body collapse show" id="newsCreate__seo__wrap">
-                                @include('admin.templates.seo', ['metaTitle' => $data['seoData']['meta_title'] ?? '', 'metaDesc' => $data['seoData']['meta_desc'] ?? '', 'metaKeyword' => $data['seoData']['meta_keyword'] ?? '',])
+                                @include('admin.templates.seo', ['metaTitle' => $data['seo_data']['meta_title'] ?? '', 'metaDesc' => $data['seo_data']['meta_desc'] ?? '', 'metaKeyword' => $data['seo_data']['meta_keyword'] ?? '',])
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                                     <div class="row">
                                         <b class="col-4">Hiện/Ẩn:</b>
                                         <div class="col-8">
-                                            <input type="checkbox" name="status" value="1" {{ $data['status'] == 1 ? 'checked' : 0 }}>
+                                            <input type="checkbox" name="status" value="1" {{ isset($data['status']) && $data['status'] == 1 ? 'checked' : 0 }}>
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@
                                     <div class="row">
                                         <b class="col-4">Nổi bật:</b>
                                         <div class="col-8">
-                                            <input type="checkbox" name="is_hot" value="1" {{ $data['is_hot'] == 1 ? 'checked' : 0 }}>
+                                            <input type="checkbox" name="is_hot" value="1" {{ isset($data['is_hot']) && $data['is_hot'] == 1 ? 'checked' : 0 }}>
                                         </div>
                                     </div>
                                 </div>
