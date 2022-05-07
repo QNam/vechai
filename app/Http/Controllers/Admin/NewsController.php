@@ -95,8 +95,7 @@ class NewsController extends Controller
         if(!$request->id) {
             $params['created_at'] = time();
             $params['updated_at'] = time();
-            NewsCategory::createMulti($request->categories, $request->id);
-            if($newsId = NewsModel::insert($params)) {
+            if($newsId = NewsModel::insertGetId($params)) {
                 NewsCategory::createMulti($request->categories, $newsId);
                 $request->session()->flash('GLOBAL_STATUS', 'SUCCESS');
                 $request->session()->flash('GLOBAL_MSG', 'Đăng bài viết thành công !');
