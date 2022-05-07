@@ -45,7 +45,7 @@ class NewsController extends Controller
         $data = $newsModel->getNewses($filter)->firstOrFail();
 
         $header = [
-            'meta_title' => empty($data['seo_data']['meta_title']) ? $data['title'] : $data['seo']['meta_title'],
+            'meta_title' => empty($data['seo_data']['meta_title']) ? $data['title'] : $data['seo_data']['meta_title'],
             'meta_keyword' => $data['seo_data']['meta_keyword'],
             'meta_desc' => $data['seo_data']['meta_desc'],
             'img' => $data['img'],
