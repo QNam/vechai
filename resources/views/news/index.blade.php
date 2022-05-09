@@ -39,7 +39,7 @@
     @if ($_WEB['banner_ad_right'])
     <div class="promotion-2">
        <a href="{{ $_WEB['banner_ad_right_link'] }}"  title="{{ $HEADER['meta_title'] }}" style="display: block">
-         <img src="{{ $_WEB['banner_ad_right'] }}" alt="{{ $HEADER['meta_title'] }}" class="img-responsive">
+         <img src="{{ asset($_WEB['banner_ad_right']) }}" alt="{{ $HEADER['meta_title'] }}" class="img-responsive">
        </a>
     </div>
     @endif
