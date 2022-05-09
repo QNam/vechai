@@ -56,7 +56,7 @@ class CategoryController extends Controller
     public function store(Request $request) {
         $params = [
             'name' => $request->name,
-            'status' => $request->status ? (int) $request->status : 0,
+            'status' => 1,
             'is_home' => $request->is_home ? (int) $request->is_home : 0,
         ];
 

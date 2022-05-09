@@ -100,6 +100,7 @@ class Web extends BaseModel
             'meta_keyword' => $request->meta_keyword,
             'short_intro' => $request->short_intro,
             'banner_ad_link' => $request->banner_ad_link,
+            'banner_ad_right_link' => $request->banner_ad_right_link,
         ];
 
         if($request->banner_ad) {
@@ -110,6 +111,16 @@ class Web extends BaseModel
             ];
             $img = $uploadService->uploadFromFile($dataUpload);
             $params['banner_ad'] = $img;
+        }
+
+        if($request->banner_ad_right) {
+            $uploadService = new UploadService();
+            $dataUpload = [
+                'name' => str_slug('banner_ad_right' . time(), "-") . "." . $request->banner_ad_right->getClientOriginalExtension(),
+                'realPath' => $request->banner_ad_right->getRealPath()
+            ];
+            $img = $uploadService->uploadFromFile($dataUpload);
+            $params['banner_ad_right'] = $img;
         }
 
         if($request->logo_top) {

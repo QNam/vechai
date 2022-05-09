@@ -34,7 +34,7 @@
                                 data-target="#newsCreate__info__setting_wrap">
                                 Thông tin
                             </div>
-                            <div class="avcollapse__body collapse show" id="newsCreate__info__setting_wrap">
+                            {{-- <div class="avcollapse__body collapse show" id="newsCreate__info__setting_wrap">
                                 <div class="mb-3">
                                     <div class="row">
                                         <b class="col-4">Hiện/Ẩn:</b>
@@ -43,7 +43,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="avcollapse__body collapse show">
                                 <div class="mb-3">
                                     <div class="row">

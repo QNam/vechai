@@ -38,10 +38,20 @@
 
             <div class="form-group">
                 <div class="row">
-                    <div class="col-2 text-right"><label for="">Banner quản cáo:</label></div>
+                    <div class="col-2 text-right"><label for="">Banner quản cáo trên:</label></div>
                     <div class="col-5">
                         @include('admin.templates.upload_single_image', ['uploadImage' => $data['banner_ad'] ?? '', 'uploadName' => 'banner_ad', 'uploadId' => 'js--upload4'])
                         <input type="text" class="form-control mt-3" name="banner_ad_link" value="{{ $data['banner_ad_link'] ?? '' }}" placeholder="Link">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-2 text-right"><label for="">Banner quản cáo phải:</label></div>
+                    <div class="col-5">
+                        @include('admin.templates.upload_single_image', ['uploadImage' => $data['banner_ad_right'] ?? '', 'uploadName' => 'banner_ad_right', 'uploadId' => 'js--upload5'])
+                        <input type="text" class="form-control mt-3" name="banner_ad_right_link" value="{{ $data['banner_ad_right_link'] ?? '' }}" placeholder="Link">
                     </div>
                 </div>
             </div>
@@ -215,5 +225,6 @@
     initUpload('#js--upload2', '#js--webSetting');
     initUpload('#js--upload3', '#js--webSetting');
     initUpload('#js--upload4', '#js--webSetting');
+    initUpload('#js--upload5', '#js--webSetting');
  </script>
 @endpush

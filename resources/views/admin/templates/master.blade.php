@@ -63,7 +63,7 @@
                             <li><a class="sidebar-link" href="{{ route('admin.news.create') }}">thêm tin tức</a></li>
                             <li><a class="sidebar-link" href="{{ route('admin.news.index') }}">danh sách tin tức</a></li>
                             <li><a class="sidebar-link" href="{{ route('admin.category.index') }}">danh mục tin tức</a></li>
-                            <li><a class="sidebar-link" href="{{ route('admin.category.create') }}">thêm mới danh mục tin tức</a></li>
+                            {{-- <li><a class="sidebar-link" href="{{ route('admin.category.create') }}">thêm mới danh mục tin tức</a></li> --}}
                         </ul>
                     </li>
                     <li class="nav-item active">

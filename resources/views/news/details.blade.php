@@ -98,9 +98,13 @@
  <!-- sidebar -->
  <div class="col-md-3 right">
     <!-- quang cao -->
-    {{-- <div class="promotion-2">
-       <img src="https://phelieuthienphat.com/wp-content/themes/html5blank-stable/images/promotion/quang-cao-thu-mua-phe-lieu.jpg" alt="Đặc sản Huế" class="img-responsive">
-    </div> --}}
+    @if ($_WEB['banner_ad_right'])
+    <div class="promotion-2">
+       <a href="{{ $_WEB['banner_ad_right_link'] }}"  title="{{ $HEADER['meta_title'] }}" style="display: block">
+         <img src="{{ $_WEB['banner_ad_right'] }}" alt="{{ $HEADER['meta_title'] }}" class="img-responsive">
+       </a>
+    </div>
+    @endif
     <!-- end quang cao -->
     <!-- dai ly -->
     <!-- blog -->
