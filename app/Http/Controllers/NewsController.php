@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\News as NewsModel;
 use App\Model\Category;
+use App\Model\Tag;
 use App\Services\UploadService;
 
 class NewsController extends Controller
@@ -42,8 +43,7 @@ class NewsController extends Controller
         $filter = [
             'id' => $request->id,
         ];
-        $data = $newsModel->getNewses($filter)->firstOrFail();
-
+        $data = $newsModel->getNewses($filter)->with('tags')->with('categories')->firstOrFail();
         $header = [
             'meta_title' => empty($data['seo_data']['meta_title']) ? $data['title'] : $data['seo_data']['meta_title'],
             'meta_keyword' => $data['seo_data']['meta_keyword'],
@@ -94,5 +94,20 @@ class NewsController extends Controller
         return response()->json($data);
     }
 
+    public function tag(Request $request) {
+        $data = [];
+        $category = Tag::findOrFail($request->id);
+
+        $data = NewsModel::where('news_tag.tag_id', $request->id)
+		->where('news.status', 1)
+		->join('news_tag', 'news_tag.news_id', '=', 'news.id')
+		->join('tag', 'tag.id', '=', 'news_tag.tag_id')
+		->select('news.*')
+		->orderBy('news.updated_at', 'DESC')
+        ->paginate($this->filter['pagination']);
+
+
+        return view("news.index")->with(['data' => $data, 'category' => $category]);
+    }
 }
 

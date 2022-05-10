@@ -20,6 +20,10 @@ class News extends BaseModel
 		return $this->belongsToMany(Category::class, 'news_category');
 	}
 
+    public function tags() {
+		return $this->belongsToMany(Tag::class, 'news_tag');
+	}
+
     public function getImgLinkAttribute() {
         return asset($this->img);
     }

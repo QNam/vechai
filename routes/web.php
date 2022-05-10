@@ -21,6 +21,11 @@ Route::middleware(['web'])->group(function () {
                 ->where('slug', '[a-zA-Z0-9-_]+')
                 ->where('id', '[0-9]+')
                 ->name('news.category');
+        Route::get('/tag/{slug}-{id}', 'NewsController@tag')
+                ->where('slug', '[a-zA-Z0-9-_]+')
+                ->where('id', '[0-9]+')
+                ->name('news.tag');
+
         Route::get('/tin-tuc/{slug}-{id}.html', 'NewsController@detail')
                 ->where('slug', '[a-zA-Z0-9-_]+')
                 ->where('id', '[0-9]+')
@@ -79,6 +84,11 @@ Route::middleware(['web', 'isAdminLogin'])->group(function () {
         Route::get('/admin/category/{id}', 'Admin\CategoryController@create')->name('admin.category.edit');
         Route::post('/admin/category', 'Admin\CategoryController@store')->name('admin.category.store');
         Route::post('/admin/category/remove', 'Admin\CategoryController@remove')->name('admin.category.remove');
+
+        Route::get('/admin/tag', 'Admin\TagController@index')->name('admin.tag.index');
+        Route::get('/admin/tag/create', 'Admin\TagController@create')->name('admin.tag.create');
+        Route::get('/admin/tag/{id}', 'Admin\TagController@create')->name('admin.tag.edit');
+        Route::post('/admin/tag', 'Admin\TagController@store')->name('admin.tag.store');
 
         Route::post('/admin/web-setting', 'Admin\WebController@store')->name('admin.web.store');
         

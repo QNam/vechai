@@ -99,6 +99,32 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <b class="col-4">Tag:</b>
+                                        <div class="col-8">
+                                            @foreach ($tags as $tag)
+                                            <div class="d-flex align-items-center mb-2">
+                                                @if (!isset($data['id']))
+                                                    <input type="checkbox" 
+                                                        name="tags[]" 
+                                                        class="mr-1" 
+                                                        value="{{ $tag->id }}"> 
+                                                    {{ $tag->name }}
+                                                @else
+                                                    <input type="checkbox" 
+                                                        name="tags[]"
+                                                        {{ in_array($tag->id, $tagIds) ? 'checked' : '' }} 
+                                                        class="mr-1" 
+                                                        value="{{ $tag->id }}"> 
+                                                    {{ $tag->name }}
+                                                @endif
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
     
                                 <div class="mb-3">
                                     <div class="row">

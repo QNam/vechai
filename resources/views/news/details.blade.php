@@ -57,13 +57,15 @@
           </div>
        </div>
     </div>
-    <div class="tag-box" style="display: none">
+    <div class="tag-box">
        <div class="tags clearfix">
           <ul class="list-inline">
              <li>
                 <span>Danh mục</span>
              </li>
-             <li><a href="https://phelieuthienphat.com/category/blog" rel="tag">Blog</a> </li>
+             @foreach ($data->categories as $cate)
+             <li><a href="{{ $cate->link }}" rel="tag">{{ $cate->name }}</a> </li>
+             @endforeach
           </ul>
        </div>
        <div class="tags clearfix">
@@ -71,19 +73,13 @@
              <li>
                 <span>Tags</span>
              </li>
-             <li><a href="https://phelieuthienphat.com/tag/mua-ban-phe-lieu-tai-huyen-can-gio" rel="tag">mua bán phế liệu tại huyện cần giờ</a></li>
-             <li><a href="https://phelieuthienphat.com/tag/phe-lieu-tai-can-gio-gia-cao" rel="tag">phế liệu tại cần giờ giá cao</a></li>
-             <li><a href="https://phelieuthienphat.com/tag/phe-lieu-tai-can-gio-gia-tot" rel="tag">phế liệu tại cần giờ giá tốt</a></li>
-             <li><a href="https://phelieuthienphat.com/tag/phe-lieu-tai-huyen-can-gio" rel="tag">phế liệu tại huyện cần giờ</a></li>
-             <li><a href="https://phelieuthienphat.com/tag/thu-mua-phe-lieu-sai-gon" rel="tag">thu mua phế liệu sài gòn</a></li>
-             <li><a href="https://phelieuthienphat.com/tag/thu-mua-phe-lieu-sai-gon-gia-cao" rel="tag">thu mua phế liệu sài gòn giá cao</a></li>
-             <li><a href="https://phelieuthienphat.com/tag/thu-mua-phe-lieu-sai-gon-gia-tot" rel="tag">thu mua phế liệu sài gòn giá tốt</a></li>
-             <li><a href="https://phelieuthienphat.com/tag/thu-mua-phe-lieu-tai-can-gio" rel="tag">thu mua phế liệu tại cần giờ</a></li>
-             <li><a href="https://phelieuthienphat.com/tag/thu-mua-phe-lieu-tp-hcm" rel="tag">thu mua phế liệu tp hcm</a></li>
+             @foreach ($data->tags as $tag)
+             <li><a href="{{ $tag->link }}" rel="tag">{{ $tag->name }}</a></li>
+             @endforeach
              <br> 
           </ul>
        </div>
-       <div class="row share">
+       {{-- <div class="row share">
           <span class="col-md-3">Chia sẻ bài viết này </span>
           <div class="share-bottom clearfix center-block col-md-6">
              <a class="btnz share facebooks" href="http://www.facebook.com/sharer/sharer.php?u=https://phelieuthienphat.com/thu-mua-phe-lieu-tai-huyen-can-gio.html"><i class="fa fa-facebook"></i></a>
@@ -92,7 +88,7 @@
              <!-- Go to www.addthis.com/dashboard to customize your tools -->
              <div class="addthis_native_toolbox"></div>
           </div>
-       </div>
+       </div> --}}
     </div>
  </div>
  <!-- sidebar -->

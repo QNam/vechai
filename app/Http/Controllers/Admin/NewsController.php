@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Services\UploadService;
 use App\Model\Category;
 use App\Model\NewsCategory;
+use App\Model\Tag;
+use App\Model\NewsTag;
 
 class NewsController extends Controller
 {
@@ -30,17 +32,23 @@ class NewsController extends Controller
     public function create(Request $request) {
         $data = null;
         $categoryIds = [];
+        $tagIds = [];
         $newsModel = new NewsModel();
         $categories = Category::get();
+        $tags = Tag::get();
 
         if($request->id) {
-            $data = $newsModel->getNewses(['id' => $request->id])->with('categories')->firstOrFail();
+            $data = $newsModel->getNewses(['id' => $request->id])->with('categories')->with('tags')->firstOrFail();
             foreach ($data->categories as $key => $value) {
                 array_push($categoryIds, $value->id);
             }
+
+            foreach ($data->tags as $key => $value) {
+                array_push($tagIds, $value->id);
+            }
         }
 
-        return view('admin.news.create', ['data' => $data, 'categories' => $categories, 'categoryIds' => $categoryIds]); 
+        return view('admin.news.create', ['data' => $data, 'categories' => $categories, 'tags' => $tags, 'categoryIds' => $categoryIds, 'tagIds' => $tagIds]); 
     }
 
     public function ajaxUpdateStatus(Request $request) {
@@ -97,12 +105,14 @@ class NewsController extends Controller
             $params['updated_at'] = time();
             if($newsId = NewsModel::insertGetId($params)) {
                 NewsCategory::createMulti($request->categories, $newsId);
+                NewsTag::createMulti($request->tags, $newsId);
                 $request->session()->flash('GLOBAL_STATUS', 'SUCCESS');
                 $request->session()->flash('GLOBAL_MSG', 'Đăng bài viết thành công !');
                 return redirect()->back();
             } 
         } else {
             NewsCategory::createMulti($request->categories, $request->id);
+            NewsTag::createMulti($request->tags, $request->id);
             $params['updated_at'] = time();
             if(NewsModel::where('id', $request->id)->update($params)) {
                 $request->session()->flash('GLOBAL_STATUS', 'SUCCESS');
